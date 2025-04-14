@@ -150,3 +150,47 @@ th{
     background-color: gold;
     color: #000;
  }
+
+ /**/
+
+ .add-section{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 1;
+  gap: 10px;
+   margin: 5px 0 ;
+ }
+ .add-section .inp{
+  width: 25%;
+  height: 25px;
+  border-radius: 4px;
+  outline: none;
+  background-color: #123;
+  border-color: white;
+  border: none;
+  transition: 0.3s ease-in-out;
+  }
+  .add-section .btn{
+    width: 15%;
+    height: 30px;
+    background-color: #0481ff;
+    color: #000;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    border: none;
+    font-size: 20px;
+  }
+  .add-section .btn:hover{
+    color: #0481ff;
+    background-color: #000;
+    transform: scale(1.1,1.1);
+    border: 3px solid  #0481ff ;
+  }
+  .add-section .inp:focus{
+    border: 2px solid  #0481ff ;
+    transform: scale(1.1,1.1);
+
+
+  }
