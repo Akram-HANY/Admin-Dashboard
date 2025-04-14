@@ -11,24 +11,31 @@ if (localStorage.products != null) {
   dataPro = [];
 }
  
-    function createPro() {
-        let newPro = {
-          title: title.value,
-          price: price.value,
-          count: count.value
-        };
-      
-        if (newPro.count > 1) {
-          for (let i = 0; i < newPro.count; i++) {
-            dataPro.push({ ...newPro });
-          }
-        } else {
-          dataPro.push({ ...newPro });
-        }
-      
-        localStorage.setItem("products", JSON.stringify(dataPro));
-        clearData(); // ننظف الحقول بعد الإضافة
+function createPro() {
+    // التحقق من أن الحقول ليست فارغة
+    if (title.value.trim() === '' || price.value.trim() === '') {
+      alert('الرجاء إدخال اسم المنتج والسعر');
+      return; // وقف التنفيذ
+    }
+  
+    let newPro = {
+      title: title.value,
+      price: price.value,
+      count: count.value || 1  // إذا ما دخلش count، نخليها 1
+    };
+  
+    if (newPro.count > 1) {
+      for (let i = 0; i < newPro.count; i++) {
+        dataPro.push({ ...newPro });
       }
+    } else {
+      dataPro.push({ ...newPro });
+    }
+  
+    localStorage.setItem("products", JSON.stringify(dataPro));
+    clearData(); 
+    showData();
+  }
 
 showData()
 //read
